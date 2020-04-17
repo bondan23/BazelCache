@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webdav
+    tty: true
+    ports:
+      - "8080:80"
+    volumes:
+      - ./cache:/var/www
+      - ./etc/default.conf:/etc/nginx/conf.d/default.conf
